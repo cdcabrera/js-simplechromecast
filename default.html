@@ -1,59 +1,161 @@
 <?php include_once("resources/private/control/common.php") ?>
 <!DOCTYPE html>
-<!--[if lt IE 9]> <html class="no-js lt-ie10 lt-ie9 ie" lang="en"> <![endif]-->
-<!--[if IE 9]> <html class="no-js lt-ie10 ie" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]--><head>
+<html class="no-js" lang="en">
+    <head>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, target-densitydpi=160dpi">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
 
-        <title itemprop="name">Simple Mileage</title>
-        <meta name="description" content="Simple mileage calculator" />
+        <title itemprop="name">Media Player</title>
+
+        <meta name="description" content="Local network media player for Chromecast." />
 
         <link rel="shortcut icon" href="favicon.ico?" />
-        <link rel="shortcut icon" href="/_resources/template/graphics/apple-touch-icon-sml.png" />
+        <link rel="shortcut icon" href="resources/graphics/favicon.png" />
 
-        <!--
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/_resources/template/graphics/apple-touch-icon-xlrg.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/_resources/template/graphics/apple-touch-icon-lrg.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/_resources/template/graphics/apple-touch-icon-med.png" />
-        <link rel="apple-touch-icon-precomposed" href="/_resources/template/graphics/apple-touch-icon-sml.png" />
-        -->
+        <link rel="icon" sizes="57x57" href="resources/graphics/touch-icon.png" />
+        <link rel="icon" sizes="72x72" href="resources/graphics/touch-icon-med.png" />
+        <link rel="icon" sizes="114x114" href="resources/graphics/touch-icon-lrg.png" />
+        <link rel="icon" sizes="144x144" href="resources/graphics/touch-icon-xlrg.png" />
+        <link rel="icon" sizes="192x192" href="resources/graphics/touch-icon-xxlrg.png" />
 
-        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="_resources/graphics/icons/apple-touch-icon.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="_resources/graphics/icons/apple-touch-icon-med.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="_resources/graphics/icons/apple-touch-icon-lrg.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="_resources/graphics/icons/apple-touch-icon-xlrg.png" />
-        <link rel="apple-touch-startup-image" sizes="320x460" href="_resources/graphics/icons/splash-320x460.png" media="(max-device-width: 320px)" />
-        <link rel="apple-touch-startup-image" sizes="640x920" href="_resources/graphics/icons/splash-640x920.png" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" />
-        <link rel="apple-touch-startup-image" sizes="640x1096" href="_resources/graphics/icons/splash-640x1096.png" media="(max-device-width: 548px) and (-webkit-min-device-pixel-ratio: 2)">
-        <link rel="apple-touch-startup-image" sizes="768x1004" href="_resources/graphics/icons/splash-768x1004.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait)" />
-        <link rel="apple-touch-startup-image" sizes="748x1024" href="_resources/graphics/icons/splash-748x1024.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape)" />
-        <link rel="apple-touch-startup-image" sizes="1536x2088" href="_resources/graphics/icons/splash-1536x2008.png" media="screen and (min-device-width: 1025px) and (max-device-width: 1536px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2)">
-        <link rel="apple-touch-startup-image" sizes="1496x2048" href="_resources/graphics/icons/splash-1496x2048.png" media="screen and (min-device-width: 1025px) and (max-device-width: 1536px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2)">
 
-        <meta name="application-name" content="Simple Mileage" />
-        <meta name="msapplication-TileColor" content="#333e48" />
-        <meta name="msapplication-square70x70logo" content="_resources/graphics/icons/win8-tile-small.png" />
-        <meta name="msapplication-square150x150logo" content="_resources/graphics/icons/win8-tile-medium.png" />
-        <meta name="msapplication-wide310x150logo" content="_resources/graphics/icons/win8-tile-wide.png" />
-        <meta name="msapplication-square310x310logo" content="_resources/graphics/icons/win8-tile-large.png" />
-        <meta name="msapplication-starturl" content="http://www.menotyou.com/simplemileage" />
-        <meta name="msapplication-tooltip" content="Simple Mileage" />
-        <meta name="msapplication-task" content="name=Home; action-uri=http://www.menotyou.com/simplemileage; icon-uri=_resources/graphics/icons/apple-touch-icon.png" />
-
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <meta name="apple-mobile-web-app-title" content="Simple Mileage">
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="mobile-web-app-title" content="Simple Mileage">
-
+        <link rel="stylesheet" href="resources/css/default.css" />
 
         <?php
+
+
             // work on caching and spitting out CSS as an appended minified include
         ?>
     </head>
     <body>
 
+        <!-- Start Application - - - - - - - - - - - - - - - - - - -->
+        <div class="media-app" id="ng-app" data-ng-app="media.player">
+
+            <div id="ng-app-views" data-ng-view="" class="fadein media-app-views">
+
+                <div class="view-media">
+                    <header>
+                        <a href="#" onclick="console.log('back');"><span>Back</span></a>
+                        <div>Status Message</div>
+                    </header>
+
+                    <ul class="media-app-alphabet">
+                        <li><a data-ng-href="#"><span>A</span></a></li>
+                        <li><a data-ng-href="#"><span>B</span></a></li>
+                        <li><a data-ng-href="#"><span>C</span></a></li>
+                        <li><a data-ng-href="#"><span>D</span></a></li>
+                        <li><a data-ng-href="#"><span>E</span></a></li>
+                        <li><a data-ng-href="#"><span>F</span></a></li>
+                        <li><a data-ng-href="#"><span>G</span></a></li>
+                        <li><a data-ng-href="#"><span>H</span></a></li>
+                        <li><a data-ng-href="#"><span>I</span></a></li>
+                        <li><a data-ng-href="#"><span>J</span></a></li>
+                        <li><a data-ng-href="#"><span>K</span></a></li>
+                        <li><a data-ng-href="#"><span>L</span></a></li>
+                        <li><a data-ng-href="#"><span>M</span></a></li>
+                        <li><a data-ng-href="#"><span>N</span></a></li>
+                        <li><a data-ng-href="#"><span>O</span></a></li>
+                        <li><a data-ng-href="#"><span>P</span></a></li>
+                        <li><a data-ng-href="#"><span>Q</span></a></li>
+                        <li><a data-ng-href="#"><span>R</span></a></li>
+                        <li><a data-ng-href="#"><span>S</span></a></li>
+                        <li><a data-ng-href="#"><span>T</span></a></li>
+                        <li><a data-ng-href="#"><span>U</span></a></li>
+                        <li><a data-ng-href="#"><span>V</span></a></li>
+                        <li><a data-ng-href="#"><span>W</span></a></li>
+                        <li><a data-ng-href="#"><span>X</span></a></li>
+                        <li><a data-ng-href="#"><span>Y</span></a></li>
+                        <li><a data-ng-href="#"><span>Z</span></a></li>
+                    </ul>
+
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <img src="#" alt="#" />
+                                    Title of Media Folder
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="#" alt="#" />
+                                    Title of Media Folder
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="#" alt="#" />
+                                    Title of Media Folder
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="#" alt="#" />
+                                    Title of Media Folder
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="#" alt="#" />
+                                    Title of Media Folder
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="#" alt="#" />
+                                    Title of Media Folder
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="#" alt="#" />
+                                    Title of Media Folder
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="#" alt="#" />
+                                    Title of Media Folder
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="#" alt="#" />
+                                    Title of Media Folder
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="#" alt="#" />
+                                    Title of Media Folder
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="#" alt="#" />
+                                    Title of Media Folder
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="#" alt="#" />
+                                    Title of Media Folder
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <footer>
+                        <a href="#" onclick="console.log('playlist');"><span>Playlist</span></a>
+                    </footer>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- End Application - - - - - - - - - - - - - - - - - - -->
 
         <?php
             // work on caching and spitting out JS as an appended minified include
