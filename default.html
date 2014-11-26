@@ -31,15 +31,17 @@
     <body>
 
         <!-- Start Application - - - - - - - - - - - - - - - - - - -->
-        <div class="media-app" id="ng-app" data-ng-app="media.player">
+        <div class="media-app" id="ng-app" data-ng-app="player">
 
             <div id="ng-app-views" data-ng-view="" class="fadein media-app-views">
 
                 <div class="view-media">
-                    <header>
-                        <a href="#" onclick="console.log('back');"><span>Back</span></a>
-                        <div>Status Message</div>
-                    </header>
+                    <div>
+                        <header>
+                            <a href="#" onclick="console.log('back');"><span>Back</span></a>
+                            <div>Status Message</div>
+                        </header>
+                    </div>
 
                     <ul class="media-app-alphabet">
                         <li><a href="#/A"><span>A</span></a></li>
@@ -70,7 +72,7 @@
                         <li><a href="#/Z"><span>Z</span></a></li>
                     </ul>
 
-                    <div>
+                    <div role="main">
                         <ul>
                             <li>
                                 <a href="#">
@@ -147,9 +149,11 @@
                         </ul>
                     </div>
 
-                    <footer>
-                        <a href="#" onclick="console.log('playlist');"><span>Playlist</span></a>
-                    </footer>
+                    <div>
+                        <footer>
+                            <a href="#" onclick="console.log('playlist');"><span>Playlist</span></a>
+                        </footer>
+                    </div>
                 </div>
 
             </div>
