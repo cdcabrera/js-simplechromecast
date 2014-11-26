@@ -24,6 +24,8 @@
     header > div                                {   color:#fff; }
     header > a span                             {   color:#000; }
 
+    footer > a span:first-child                 {   color:#fff; font-size:10px; }
+
     .media-app-alphabet                         {   font-size:13px; }
     .media-app-alphabet a                       {   color:#0078f5; }
 
@@ -68,8 +70,9 @@
         header > a:hover:before                 {   border-right-color:#fff; }
 
 
-        footer > a                              {   position:relative; overflow:hidden; display:inline-block; width:40px; height:50px; }
-        footer > a span                         {   position:relative; display:inline-block; text-indent:-999px; }
+        footer > a                              {   position:relative; display:inline-block; width:40px; height:50px; }
+        footer > a span:first-child             {   position:absolute; display:inline-block; top:-17px; left:50%; padding:2px 5px; border-radius:30px; background-color:red; z-index:2; }
+        footer > a span:last-child              {   position:relative; display:inline-block; text-indent:-999px; }
 
 
     .media-app-views div[role=main]             {   padding-top:60px; overflow-y:auto; }
@@ -92,7 +95,12 @@
         .view-media div[role=main] li > a span:last-child    {   width:75%; padding-left:5px; }
 
 
+/*-- JS Activated - - - - - - - - - - - - - - - - - - - --*/
 
+    .hidden                                     {   display:none; }
+    .hidden-visibility                          {   visibility:hidden; }
+
+    .fadein                                     {    }
 
 
 
