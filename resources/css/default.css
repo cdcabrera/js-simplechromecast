@@ -5,15 +5,14 @@
     * { -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; }
 
 /*-- Images - - - - - - - - - - - - - - - - - - - --*/
-
+    .view-media > div li > a span:first-child   {   background-image:url(../graphics/loader-small.gif); background-position:center; background-repeat:no-repeat; }
 
 /*-- Typography - - - - - - - - - - - - - - - - - - - --*/
-    body                                        {   font-family:Helvetica, arial, sans-serif; font-size:16px; }
+    body                                        {   color:#0078f5; font-family:Helvetica, arial, sans-serif; font-size:16px; }
+    a                                           {   color:#0078f5; text-decoration:none; }
 
     header > div                                {   color:#fff; }
     header > a span                             {   color:#000; }
-
-    a                                           {   text-decoration:none; }
 
     .media-app-alphabet                         {   font-size:13px; }
     .media-app-alphabet a                       {   color:#0078f5; }
@@ -78,7 +77,7 @@
 
         .view-media > div li > a                    {   display:block; padding:10px 20px 10px 15px; }
         .view-media > div li > a span               {   display:inline-block; overflow:hidden; vertical-align:middle; }
-        .view-media > div li > a span:first-child   {   width:15%; height:50px; border:2px solid #0078f5; border-radius:5px; background-color:#0078f5; }
+        .view-media > div li > a span:first-child   {   width:15%; height:50px; border:2px solid #000; border-radius:5px; background-color:#0078f5;  box-shadow:0px 0px 5px 0px #0078f5; }
         .view-media > div li > a span img           {   width:100%; }
         .view-media > div li > a span:last-child    {   width:75%; padding-left:5px; }
 
