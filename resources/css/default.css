@@ -9,12 +9,14 @@
 
 /*-- Typography - - - - - - - - - - - - - - - - - - - --*/
     body                                        {   font-family:Helvetica, arial, sans-serif; font-size:16px; }
-    .media-app-alphabet a                       {   color:#0078f5; font-size:13px; }
 
     header > div                                {   color:#fff; }
     header > a span                             {   color:#000; }
 
     a                                           {   text-decoration:none; }
+
+    .media-app-alphabet                         {   font-size:13px; }
+    .media-app-alphabet a                       {   color:#0078f5; }
 
 
 /*-- Design - - - - - - - - - - - - - - - - - - - --*/
@@ -22,7 +24,7 @@
     .media-app                                  {   min-width:320px;  }
 
     header,
-    footer                                      {   position:fixed; width:100%; padding:5px 10px; z-index:1; }
+    footer                                      {   position:fixed; width:100%; padding:5px 10px 8px; z-index:1; }
 
     header                                      {   top:0; background-color:#0078f5; box-shadow:0px 0px 10px 0px orange; }
     footer                                      {   bottom:0; left:0; width:auto; background-color:#fff; }
@@ -64,23 +66,33 @@
     .media-app-views > div > div                {   padding-top:60px; overflow-y:auto; }
 
 
-        .media-app-alphabet                     {   position:fixed; top:0; right:0; padding:0; padding-top:60px;  margin:0; background-color:green;  }
-        .media-app-alphabet li                  {   list-style:none; padding:0; text-align:center; padding-right:8px; background-color:#fff; }
+        .media-app-alphabet                     {   position:fixed; top:60px; right:0; margin:0; }
+        .media-app-alphabet li                  {   list-style:none; padding:0; margin:0; border-width:0; text-align:center; }
+        .media-app-alphabet a                   {   padding:0; padding-left:30px; border-width:0; }
+        .media-app-alphabet span                {   display:inline-block; min-width:20px; padding:0 8px 0 0; background-color:#fff; }
 
     /*-- Initial Media View --*/
-        .view-media > div ul                    {   padding:0; margin:0; }
-        .view-media > div li                    {   list-style:none; }
-        .view-media > div a                     {   display:block; padding:20px; border-bottom:1px solid red; }
+        .view-media > div ul                        {   padding:0; margin:0; }
+        .view-media > div li                        {    list-style:none; }
+        .view-media > div li:nth-child(odd) a       {   border-top:1px solid #d4eefc; background-color:#def2fe; }
+
+        .view-media > div li > a                    {   display:block; padding:10px 20px 10px 15px; }
+        .view-media > div li > a span               {   display:inline-block; overflow:hidden; vertical-align:middle; }
+        .view-media > div li > a span:first-child   {   width:15%; height:50px; border:2px solid #0078f5; border-radius:5px; background-color:#0078f5; }
+        .view-media > div li > a span img           {   width:100%; }
+        .view-media > div li > a span:last-child    {   width:75%; padding-left:5px; }
 
 
 
 
 
 
-@media only screen and (min-width: 20em)
+
+
+@media only screen and (min-width: 21em)
 {
     /*-- Images - - - - - - - - - - - - - - - - - - - --*/
     /*-- Typography - - - - - - - - - - - - - - - - - - - --*/
     /*-- Design - - - - - - - - - - - - - - - - - - - --*/
-    .media-app-alphabet                         {   /*display:none;*/ }
+    .media-app-alphabet                         {   display:none; }
 }
