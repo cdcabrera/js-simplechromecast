@@ -9,7 +9,9 @@
             <ul data-ng-repeat="file in media.files">
                 <li>
                     <a data-ng-href="{{file.id}}">
-                        <span><img src="resources/graphics/placeholder.gif" alt="{{file.alt}}" data-src="{{file.image}}" /></span>
+                        <span><img src="resources/graphics/placeholder.gif"
+                                   data-ng-attr-alt="{{file.alt}}"
+                                   data-src="{{file.image}}" /></span>
                         <span>{{file.title}}</span>
                     </a>
                 </li>

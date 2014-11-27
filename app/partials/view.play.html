@@ -1,0 +1,50 @@
+    <div class="view-play" data-ng-controller="playctrl">
+        <div data-ng-include="'/projects/js-simplechromecast/app/partials/include.header.html'">
+        </div>
+
+        <div data-ng-include="'/projects/js-simplechromecast/app/partials/include.alphabet.html'">
+        </div>
+
+        <div role="main">
+            <h2>file.title</h2>
+
+            <a href="#"
+               class="media-play"
+               data-ng-click="">
+                <span>Play</span>
+            </a>
+
+            <a href="#"
+               class="media-pause"
+               data-ng-click="">
+                <span>
+                    <span>Pause</span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </a>
+
+            <p>
+                {{file.timeremaining}} min remain
+            </p>
+
+            <p>
+                <input type="range"
+                       min="0"
+                       data-ng-attr-max="{{file.fulltime}}"
+                       step="1"
+                       data-ng-model="file.currenttime"
+                       data-ng-change="" />
+            </p>
+
+            <p>
+                <select disabled="disabled"
+                        data-ng-model="file.subtitles">
+                    <option selected="selected">No Subtitles</option>
+                </select>
+            </p>
+        </div>
+
+        <div data-ng-include="'/projects/js-simplechromecast/app/partials/include.footer.html'">
+        </div>
+    </div>

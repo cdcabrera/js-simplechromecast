@@ -170,7 +170,6 @@
                                                                                         text-indent:-999px;
                                                                                         vertical-align:middle;
                                                                                     }
-        .view-play div[role=main] a.media-play > span:last-child                    {   display:none; }
 
 
         .view-play div[role=main] a.media-pause                                     {    }
@@ -179,13 +178,12 @@
         .view-play div[role=main] a.media-pause > span:last-child span + span       {   display:inline-block; width:35px; height:50%; margin-right:5px; background-color:#42464a; vertical-align:middle; }
 
 
-        .view-play div[role=main] a.media-pause > span:first-child                  {   display:none; }
-
         .view-play div[role=main] > p                                               {   padding:0; margin:0; text-align:center; }
         .view-play div[role=main] > a + p                                           {   margin-bottom:20px; }
         .view-play div[role=main] > p input                                         {   zoom:20; width:75%; }
-        .view-play div[role=main] > p:last-child                                    {   margin-top:25px; }
+        .view-play div[role=main] > p:last-child                                    {   margin:25px 0; }
         .view-play div[role=main] > p select                                        {   width:45%; }
+
     /*-- Playlist View --*/
 
 

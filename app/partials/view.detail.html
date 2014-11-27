@@ -1,4 +1,4 @@
-    <div class="view-detail" data-ng-controller="mediactrl">
+    <div class="view-detail" data-ng-controller="detailctrl">
         <div data-ng-include="'/projects/js-simplechromecast/app/partials/include.header.html'">
         </div>
 
@@ -9,7 +9,9 @@
             <ul data-ng-repeat="file in media.files">
                 <li>
                     <a data-ng-href="{{file.id}}">
-                        <span><img src="resources/graphics/placeholder.gif" alt="{{file.alt}}" data-src="{{file.image}}" /></span>
+                        <span><img src="resources/graphics/placeholder.gif"
+                                   data-ng-attr-alt="{{file.alt}}"
+                                   data-src="{{file.image}}" /></span>
                         <div>
                             <p><strong>{{file.title}}</strong></p>
                             <ul>
