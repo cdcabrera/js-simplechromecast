@@ -29,7 +29,7 @@
     a                                               {   color:#0078f5; text-decoration:none; }
     a:hover                                         {   color:#f3531b; }
 
-    header > div                                    {   color:#fff; }
+    header > h1                                     {   color:#fff; font-size:16px; font-weight:normal; }
     header > a span                                 {   color:#000; }
 
     footer > a span:first-child                     {   color:#fff; font-size:10px; }
@@ -41,9 +41,12 @@
     .view-detail div[role=main] li div > ul         {   color:#04376d; font-size:14px; }
     .view-detail div[role=main] li div > ul         {   font-size:12px; }
 
+    .view-play div[role=main] h2,
+    .view-play div[role=main] > p select            {   font-size:18px; font-weight:normal; }
+
 /*-- Design - - - - - - - - - - - - - - - - - - - --*/
 
-    .media-app                                  {   min-width:320px;  }
+    .media-app                                  {   min-width:320px; }
 
     header,
     footer                                      {   position:fixed; width:100%; padding:5px 10px 8px; z-index:1; }
@@ -52,7 +55,7 @@
     footer                                      {   bottom:0; left:0; width:auto; background-color:#fff; border-radius:0 5px 0 0; box-shadow:0px 0px 8px 0px #0078f5; opacity:0.95; }
 
 
-        header > div                            {   position:absolute; top:0; line-height:40px; width:100%; padding:5px; text-align:center; }
+        header > h1                             {   position:absolute; top:0; line-height:40px; width:100%; padding:5px; margin:0; text-align:center; }
 
         header > a,
         header > a span                         {   position:relative; overflow:hidden; display:inline-block; z-index:1; }
@@ -140,6 +143,52 @@
         .view-detail div[role=main] li div > p:first-child + ul li:last-child,
         .view-detail div[role=main] li div > p:first-child + ul li:nth-child(3) {   display:block; }
 
+    /*-- Play View --*/
+        .view-play div[role=main] h2                                                {   padding:10px 8px; margin:0; text-align:center; }
+        .view-play div[role=main] a                                                 {
+                                                                                        display:block;
+                                                                                        width:200px;
+                                                                                        height:200px;
+                                                                                        margin:0 auto 5px;
+                                                                                        border-radius:50%;
+                                                                                        border:15px solid #42464a;
+                                                                                        text-align:center;
+                                                                                    }
+
+        .view-play div[role=main] a.media-play                                      {    }
+        .view-play div[role=main] a.media-play:before                               {   display:inline-block; width:2px; height:100%; content:' '; visibility:hidden; vertical-align:middle; }
+
+        .view-play div[role=main] a.media-play > span:first-child                   {
+                                                                                        display:inline-block;
+                                                                                        overflow:hidden;
+                                                                                        width:0;
+                                                                                        height:0;
+                                                                                        margin-left:10%;
+                                                                                        border-top:50px solid transparent;
+                                                                                        border-bottom:50px solid transparent;
+                                                                                        border-left:80px solid #42464a;
+                                                                                        text-indent:-999px;
+                                                                                        vertical-align:middle;
+                                                                                    }
+        .view-play div[role=main] a.media-play > span:last-child                    {   display:none; }
+
+
+        .view-play div[role=main] a.media-pause                                     {    }
+        .view-play div[role=main] a.media-pause > span:last-child                   {    }
+        .view-play div[role=main] a.media-pause > span:last-child span:first-child  {   display:inline-block; width:1px; height:100%; content:' '; visibility:hidden; vertical-align:middle; text-indent:-999px; }
+        .view-play div[role=main] a.media-pause > span:last-child span + span       {   display:inline-block; width:35px; height:50%; margin-right:5px; background-color:#42464a; vertical-align:middle; }
+
+
+        .view-play div[role=main] a.media-pause > span:first-child                  {   display:none; }
+
+        .view-play div[role=main] > p                                               {   padding:0; margin:0; text-align:center; }
+        .view-play div[role=main] > a + p                                           {   margin-bottom:20px; }
+        .view-play div[role=main] > p input                                         {   zoom:20; width:75%; }
+        .view-play div[role=main] > p:last-child                                    {   margin-top:25px; }
+        .view-play div[role=main] > p select                                        {   width:45%; }
+    /*-- Playlist View --*/
+
+
 
 
 /*-- JS Activated - - - - - - - - - - - - - - - - - - - --*/
@@ -159,4 +208,12 @@
     /*-- Typography - - - - - - - - - - - - - - - - - - - --*/
     /*-- Design - - - - - - - - - - - - - - - - - - - --*/
     .media-app-alphabet                         {   display:none; }
+}
+
+@media only screen and (min-width: 47em)
+{
+    /*-- Images - - - - - - - - - - - - - - - - - - - --*/
+    /*-- Typography - - - - - - - - - - - - - - - - - - - --*/
+    /*-- Design - - - - - - - - - - - - - - - - - - - --*/
+    .view-play div[role=main] > p input         {   zoom:2; }
 }

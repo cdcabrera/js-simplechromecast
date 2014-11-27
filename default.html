@@ -35,14 +35,45 @@
 
             <div id="ng-app-views" data-ng-view="" class="fadein media-app-views">
 
-                <div class="view-detail">
+                <div class="view-play">
                     <div>
                         <header>
                             <a href="#" onclick="console.log('back');"><span>Back</span></a>
-                            <div>Status Message</div>
+                            <h1>Status Message</h1>
                         </header>
                     </div>
 
+                    <div role="main">
+                        <h2>Name of Media that's Playing Really long title</h2>
+
+                        <a href="#" class="media-play">
+                            <span>Play</span>
+                            <span>
+                                <span>Pause</span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </a>
+
+                        <p>
+                            46 min remain
+                        </p>
+
+                        <p>
+                            <input type="range" min="0" max="104" step="1" value="0" />
+                        </p>
+
+                        <p>
+                            <select>
+                                <option selected="selected">No Subtitles</option>
+                                <option value="1">Track 1</option>
+                                <option value="2">Track 2</option>
+                            </select>
+                        </p>
+
+                    </div>
+
+<!--
                     <div role="main">
                         <ul>
                             <li>
@@ -89,7 +120,7 @@
                             </li>
                         </ul>
                     </div>
-
+-->
 <!--
                     <div>
                         <ul class="media-app-alphabet">
