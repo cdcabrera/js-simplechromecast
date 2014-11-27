@@ -6,9 +6,9 @@
     $FileRootPath       = $Common->FileRootPath();
     $RootPath           = $Common->RootPath();
 
-    include_once("fileloader.php");
-    include_once("media.php");
-    include_once("minify.php");
+    include_once("class.FileLoader.php");
+    include_once("service.Media.php");
+    include_once("class.JavaScriptPacker.php");
 
 
 
