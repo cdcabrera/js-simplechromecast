@@ -1,0 +1,35 @@
+    <div class="view-detail" data-ng-controller="mediactrl">
+        <div data-ng-include="'/projects/js-simplechromecast/app/partials/include.header.html'">
+        </div>
+
+        <div data-ng-include="'/projects/js-simplechromecast/app/partials/include.alphabet.html'">
+        </div>
+
+        <div role="main">
+            <ul data-ng-repeat="file in media.files">
+                <li>
+                    <a data-ng-href="{{file.id}}">
+                        <span><img src="resources/graphics/placeholder.gif" alt="{{file.alt}}" data-src="{{file.image}}" /></span>
+                        <div>
+                            <p><strong>{{file.title}}</strong></p>
+                            <ul>
+                                <li>{{file.time}}</li>
+                                <li>{{file.rating}}</li>
+                                <li>{{file.releasedate}}</li>
+                                <li>{{file.genre}}</li>
+                            </ul>
+                            <p>
+                                {{file.description}}
+                            </p>
+                            <ul>
+                                <li><strong>File:</strong> {{file.filename}}</li>
+                            </ul>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div data-ng-include="'/projects/js-simplechromecast/app/partials/include.footer.html'">
+        </div>
+    </div>

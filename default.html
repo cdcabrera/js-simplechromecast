@@ -35,7 +35,7 @@
 
             <div id="ng-app-views" data-ng-view="" class="fadein media-app-views">
 
-                <div class="view-media">
+                <div class="view-detail">
                     <div>
                         <header>
                             <a href="#" onclick="console.log('back');"><span>Back</span></a>
@@ -43,6 +43,54 @@
                         </header>
                     </div>
 
+                    <div role="main">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <span><img src="resources/graphics/placeholder.gif" alt="#" data-src=".archive/testimage.png" /></span>
+                                    <div>
+                                        <p><strong>Title of Media File. Additional Text to test length</strong></p>
+                                        <ul>
+                                            <li>105 min</li>
+                                            <li>Rated R</li>
+                                            <li>22 June 2012</li>
+                                            <li>Action, Fantasy, Horror...</li>
+                                        </ul>
+                                        <p>
+                                            Description goes here. Description goes here. Description goes here.
+                                            Description goes here. Description goes here. Description goes...
+                                        </p>
+                                        <ul>
+                                            <li><strong>File:</strong> FileName.m4v</li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span><img src="resources/graphics/placeholder.gif" alt="#" data-src=".archive/testimage.png" /></span>
+                                    <div>
+                                        <p><strong>Title of Media File. Additional Text to test length</strong></p>
+                                        <ul>
+                                            <li><span>105 min</span></li>
+                                            <li><span>Rated R</span></li>
+                                            <li><span>22 June 2012</span></li>
+                                            <li><span>Action, Fantasy, Horror...</span></li>
+                                        </ul>
+                                        <p>
+                                            Description goes here. Description goes here. Description goes here.
+                                            Description goes here. Description goes here. Description goes...
+                                        </p>
+                                        <ul>
+                                            <li><strong>File:</strong> <span>FileName.m4v</span></li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+<!--
                     <div>
                         <ul class="media-app-alphabet">
                             <li><a href="#/A"><span>A</span></a></li>
@@ -150,10 +198,11 @@
                             </li>
                         </ul>
                     </div>
+-->
 
                     <div>
                         <footer>
-                            <a href="#" onclick="console.log('playlist');"><span>10&nbsp;of&nbsp;50</span><span>Playlist</span></a>
+                            <a href="#" onclick="console.log('playlist');"><span>1&nbsp;of&nbsp;10</span><span>Playlist</span></a>
                         </footer>
                     </div>
                 </div>

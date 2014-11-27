@@ -1,21 +1,21 @@
-<div class="view-media" data-ng-controller="mediactrl">
-    <div data-ng-include="'/projects/js-simplechromecast/app/partials/include.header.html'">
-    </div>
+    <div class="view-media" data-ng-controller="mediactrl">
+        <div data-ng-include="'/projects/js-simplechromecast/app/partials/include.header.html'">
+        </div>
 
-    <div data-ng-include="'/projects/js-simplechromecast/app/partials/include.alphabet.html'">
-    </div>
+        <div data-ng-include="'/projects/js-simplechromecast/app/partials/include.alphabet.html'">
+        </div>
 
-    <div>
-        <ul data-ng-repeat="file in media.files">
-            <li>
-                <a data-ng-href="{{file.id}}">
-                    <span><img src="resources/graphics/placeholder.gif" alt="#" data-src="{{file.image}}" /></span>
-                    <span>{{file.title}}</span>
-                </a>
-            </li>
-        </ul>
-    </div>
+        <div role="main">
+            <ul data-ng-repeat="file in media.files">
+                <li>
+                    <a data-ng-href="{{file.id}}">
+                        <span><img src="resources/graphics/placeholder.gif" alt="{{file.alt}}" data-src="{{file.image}}" /></span>
+                        <span>{{file.title}}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
 
-    <div data-ng-include="'/projects/js-simplechromecast/app/partials/include.footer.html'">
+        <div data-ng-include="'/projects/js-simplechromecast/app/partials/include.footer.html'">
+        </div>
     </div>
-</div>
