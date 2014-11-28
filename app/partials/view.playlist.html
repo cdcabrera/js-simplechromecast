@@ -1,0 +1,27 @@
+    <div class="view-medialist playlist" data-ng-controller="playlistctrl">
+        <div data-ng-include="'/projects/js-simplechromecast/app/partials/include.header.html'">
+        </div>
+
+        <div data-ng-include="'/projects/js-simplechromecast/app/partials/include.alphabet.html'">
+        </div>
+
+        <div role="main">
+            <ul>
+                <li data-ng-repeat="file in media.files">
+                    <a href="#"
+                       data-ng-click=""><span>X</span></a>
+                    <a data-ng-href="{{file.id}}">
+                        <span><img src="resources/graphics/placeholder.gif"
+                                   data-ng-attr-alt="{{file.alt}}"
+                                   data-src="{{file.image}}" /></span>
+                        <div>
+                            <p>{{file.description}}</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div data-ng-include="'/projects/js-simplechromecast/app/partials/include.footer.html'">
+        </div>
+    </div>

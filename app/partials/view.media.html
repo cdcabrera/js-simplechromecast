@@ -6,8 +6,8 @@
         </div>
 
         <div role="main">
-            <ul data-ng-repeat="file in media.files">
-                <li>
+            <ul>
+                <li data-ng-repeat="file in media.files">
                     <a data-ng-href="{{file.id}}">
                         <span><img src="resources/graphics/placeholder.gif"
                                    data-ng-attr-alt="{{file.alt}}"
