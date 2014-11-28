@@ -1,4 +1,4 @@
-<?php include_once("resources/private/control/common.php") ?>
+<?php include_once("resources/private/control/class.Common.php") ?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
     <head>
@@ -20,13 +20,19 @@
         <link rel="icon" sizes="192x192" href="resources/graphics/touch-icon-xxlrg.png" />
 
 
-        <link rel="stylesheet" href="resources/css/default.css" />
-
-        <?php
-
-
-            // work on caching and spitting out CSS as an appended minified include
-        ?>
+        <!-- link rel="stylesheet" href="resources/css/default.css" / -->
+        <style>
+            <?php
+                $doit = new Common();
+                echo $doit->PackCSS('resources/css/default.css');
+            ?>
+        </style>
+        <script>
+            <?php
+                $doit = new Common();
+                echo $doit->PackJS('resources/js/header.js');
+            ?>
+        </script>
     </head>
     <body>
 

@@ -17,8 +17,34 @@
         function __construct()
         {
             $args = func_get_args();
+            return call_user_func_array(array($this, "loadFiles"), $args);
+        }
+
+        //public static function loadFiles()
+        //{
+        //    $fileloader = new FileLoader();
+        //    return $fileloader->loadFiles();
+        //}
+
+
+        /**
+         *
+         */
+        public function loadFiles()
+        {
+            //return $this->loadFile( $file );
+            $args = func_get_args();
+            $returnedData = array();
             //$i = func_num_args();
             //call_user_func_array(array($this, "processCSS"), $args);
+
+            foreach($args as $arg)
+            {
+                $fileData = $this->loadFile( $arg );
+                array_push($returnedData, $fileData);
+            }
+
+            return $returnedData;
         }
 
 
@@ -41,7 +67,7 @@
         /**
          *
          */
-        private function fileExists( $file )
+        private function checkFileExists( $file )
         {
             $ret = false;
             if( preg_match("/^(https?|ftp):\/\//i", $file) )
@@ -65,7 +91,7 @@
         /**
          *
          */
-        private function loadFile($file)
+        private function loadFile( $file )
         {
             //$file               = $this->File;
             $cachedirectory     = $this->CacheDirectory;
@@ -112,7 +138,7 @@
                 //-- use seconds until file is updated
                 if( is_numeric( $cachetime ) && $cachefileExists && (time() - $cachetime < filemtime($cachefile)) )
                 {
-                    $tempdoc = $this->GetFile($cachefile);
+                    $tempdoc = $this->getFile($cachefile);
 
                     if(!is_null($tempdoc))
                     {
@@ -124,8 +150,7 @@
 
             if( $this->CheckFileExists( $file ) )
             {
-
-                $doc = $this->GetFile($file);
+                $doc = $this->getFile($file);
 
                 if( !is_null($cachedirectory) && $externalfile )
                 {
@@ -134,7 +159,7 @@
             }
             elseif( $cachefileExists && $externalfile )
             {
-                $tempdoc = $this->GetFile($cachefile);
+                $tempdoc = $this->getFile($cachefile);
 
                 if(!is_null($tempdoc))
                 {
@@ -144,7 +169,6 @@
 
             return array("raw"=>$doc, "name"=>$cachefilename, "cache"=>$cachefile);
         }
-
 
     }
 
