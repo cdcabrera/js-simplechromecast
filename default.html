@@ -41,6 +41,7 @@
 
             <div id="ng-app-views" data-ng-view="" class="fadein media-app-views">
 
+<!--
                 <div class="view-medialist playlist">
                     <div>
                         <header>
@@ -48,7 +49,8 @@
                             <h1>Status Message</h1>
                         </header>
                     </div>
-
+-->
+<!--
                     <div role="main">
                         <ul>
                             <li>
@@ -98,7 +100,7 @@
                             </li>
                         </ul>
                     </div>
-
+-->
 <!--
                     <div role="main">
                         <h2>Name of Media that's Playing Really long title</h2>
@@ -314,21 +316,31 @@
                         </ul>
                     </div>
 -->
-
+<!--
                     <div>
                         <footer>
                             <a href="#" onclick="console.log('playlist');"><span>1&nbsp;of&nbsp;10</span><span>Playlist</span></a>
                         </footer>
                     </div>
                 </div>
-
+-->
             </div>
 
         </div>
         <!-- End Application - - - - - - - - - - - - - - - - - - -->
-
-        <?php
-            // work on caching and spitting out JS as an appended minified include
-        ?>
+        <script src="resources/vendor/angular/angular.js"></script>
+        <script src="resources/vendor/angular/angular-route.js"></script>
+        <script>
+            (function(window, angular, undefined) {'use strict';<?php
+                    $doit = new Common();
+                    echo $doit->PackJS(
+                        'app/app.js',
+                        'app/controllers/media.js',
+                        'app/controllers/detail.js',
+                        'app/controllers/play.js',
+                        'app/controllers/playlist.js'
+                    );
+                ?>})(this, angular);
+        </script>
     </body>
 </html>
