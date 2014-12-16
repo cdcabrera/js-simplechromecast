@@ -5,20 +5,20 @@
      */
     class FileLoader
     {
-        public $File            = null;
-        public $CacheDirectory  = null;
+        public $File            = NULL;
+        public $CacheDirectory  = NULL;
         public $CacheTime       = 300;
         public $CacheAll        = true;
-        public $CacheMD5ID      = null;
-        public $CacheFileName   = null;
+        public $CacheMD5ID      = NULL;
+        public $CacheFileName   = NULL;
         public $CacheExtension  = 'txt';
 
 
-        function __construct()
-        {
-            $args = func_get_args();
-            return call_user_func_array(array($this, "loadFiles"), $args);
-        }
+        //function __construct()
+        //{
+            //$args = func_get_args();
+            //return call_user_func_array(array($this, "loadFiles"), $args);
+        //}
 
         //public static function loadFiles()
         //{
@@ -57,7 +57,7 @@
 
             if(strlen($content) === 0)
             {
-                $content = null;
+                $content = NULL;
             }
 
             return $content;
@@ -105,8 +105,8 @@
             $cachefileExists 	= false;
             $cachefilename 		= '';
             $tempcachefilename  = '';
-            $doc 				= null;
-            $tempdoc            = null;
+            $doc 				= NULL;
+            $tempdoc            = NULL;
             $externalfile       = ($cacheeverything)? $cacheeverything : preg_match("/^(https?|ftp):\/\//i", $file);
 
 
