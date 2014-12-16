@@ -1,0 +1,9 @@
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /js-simplechromecast/
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^js\-simplechromecast\/([a-zA-Z0-9\s\/]+)$ resources/private/php/service.Media.php/$1 [L]
+</IfModule>
