@@ -1,4 +1,4 @@
-<?php include_once("resources/private/control/class.Common.php") ?>
+<?php include_once("resources/private/php/class.Common.php") ?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
     <head>
@@ -20,327 +20,48 @@
         <link rel="icon" sizes="192x192" href="resources/graphics/touch-icon-xxlrg.png" />
 
 
-        <!-- link rel="stylesheet" href="resources/css/default.css" / -->
-        <style>
-            <?php
-                $doit = new Common();
-                echo $doit->PackCSS('resources/css/default.css');
-            ?>
-        </style>
-        <script>
-            <?php
-                $doit = new Common();
-                echo $doit->PackJS('resources/js/header.js');
-            ?>
-        </script>
+        <?php
+            $doit = new IncludeFiles();
+            echo $doit->packCss('resources/css/default.css');
+        ?>
+
+
+        <?php
+            $doit = new IncludeFiles();
+            echo $doit->packJs('resources/js/header.js');
+        ?>
     </head>
     <body>
-
+    <!--#echo var="DATE_LOCAL" -->
         <!-- Start Application - - - - - - - - - - - - - - - - - - -->
         <div class="media-app" id="ng-app" data-ng-app="player">
 
             <div id="ng-app-views" data-ng-view="" class="fadein media-app-views">
-
-<!--
-                <div class="view-medialist playlist">
-                    <div>
-                        <header>
-                            <a href="#" onclick="console.log('back');"><span>Back</span></a>
-                            <h1>Status Message</h1>
-                        </header>
-                    </div>
--->
-<!--
-                    <div role="main">
-                        <ul>
-                            <li>
-                                <a href="#"><span>X</span></a>
-                                <a href="#">
-                                    <span><img src="resources/graphics/placeholder.gif" alt="#" data-src=".archive/testimage.png" /></span>
-                                    <div>
-                                        <p>Title of Media Folder. Additional Text to test length</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"><span>X</span></a>
-                                <a href="#">
-                                    <span><img src=".archive/testimage.png" alt="#" /></span>
-                                    <div>
-                                        <p>Title of Media Folder. Additional Text to test length</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"><span>X</span></a>
-                                <a href="#">
-                                    <span><img src=".archive/testimage.png" alt="#" /></span>
-                                    <div>
-                                        <p>Title of Media Folder. Additional Text to test length</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"><span>X</span></a>
-                                <a href="#">
-                                    <span><img src=".archive/testimage.png" alt="#" /></span>
-                                    <div>
-                                        <p>Title of Media Folder. Additional Text to test length</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"><span>X</span></a>
-                                <a href="#">
-                                    <span><img src=".archive/testimage.png" alt="#" /></span>
-                                    <div>
-                                        <p>Title of Media Folder. Additional Text to test length</p>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
--->
-<!--
-                    <div role="main">
-                        <h2>Name of Media that's Playing Really long title</h2>
-
-                        <a href="#" class="media-play">
-                            <span>Play</span>
-                        </a>
-
-                        <a href="#" class="media-pause">
-                            <span>
-                                <span>Pause</span>
-                                <span></span>
-                                <span></span>
-                            </span>
-                        </a>
-
-                        <p>
-                            46 min remain
-                        </p>
-
-                        <p>
-                            <input type="range" min="0" max="104" step="1" value="0" />
-                        </p>
-
-                        <p>
-                            <select>
-                                <option selected="selected">No Subtitles</option>
-                                <option value="1">Track 1</option>
-                                <option value="2">Track 2</option>
-                            </select>
-                        </p>
-
-                    </div>
--->
-<!--
-                    <div role="main">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <span><img src="resources/graphics/placeholder.gif" alt="#" data-src=".archive/testimage.png" /></span>
-                                    <div>
-                                        <p><strong>Title of Media File. Additional Text to test length</strong></p>
-                                        <ul>
-                                            <li>105 min</li>
-                                            <li>Rated R</li>
-                                            <li>22 June 2012</li>
-                                            <li>Action, Fantasy, Horror...</li>
-                                        </ul>
-                                        <p>
-                                            Description goes here. Description goes here. Description goes here.
-                                            Description goes here. Description goes here. Description goes...
-                                        </p>
-                                        <ul>
-                                            <li><strong>File:</strong> FileName.m4v</li>
-                                        </ul>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span><img src="resources/graphics/placeholder.gif" alt="#" data-src=".archive/testimage.png" /></span>
-                                    <div>
-                                        <p><strong>Title of Media File. Additional Text to test length</strong></p>
-                                        <ul>
-                                            <li><span>105 min</span></li>
-                                            <li><span>Rated R</span></li>
-                                            <li><span>22 June 2012</span></li>
-                                            <li><span>Action, Fantasy, Horror...</span></li>
-                                        </ul>
-                                        <p>
-                                            Description goes here. Description goes here. Description goes here.
-                                            Description goes here. Description goes here. Description goes...
-                                        </p>
-                                        <ul>
-                                            <li><strong>File:</strong> <span>FileName.m4v</span></li>
-                                        </ul>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
--->
-<!--
-                    <div>
-                        <ul class="media-app-alphabet">
-                            <li><a href="#/A"><span>A</span></a></li>
-                            <li><a href="#/B"><span>B</span></a></li>
-                            <li><a href="#/C"><span>C</span></a></li>
-                            <li><a href="#/D"><span>D</span></a></li>
-                            <li><a href="#/E"><span>E</span></a></li>
-                            <li><a href="#/F"><span>F</span></a></li>
-                            <li><a href="#/G"><span>G</span></a></li>
-                            <li><a href="#/H"><span>H</span></a></li>
-                            <li><a href="#/I"><span>I</span></a></li>
-                            <li><a href="#/J"><span>J</span></a></li>
-                            <li><a href="#/K"><span>K</span></a></li>
-                            <li><a href="#/L"><span>L</span></a></li>
-                            <li><a href="#/M"><span>M</span></a></li>
-                            <li><a href="#/N"><span>N</span></a></li>
-                            <li><a href="#/O"><span>O</span></a></li>
-                            <li><a href="#/P"><span>P</span></a></li>
-                            <li><a href="#/Q"><span>Q</span></a></li>
-                            <li><a href="#/R"><span>R</span></a></li>
-                            <li><a href="#/S"><span>S</span></a></li>
-                            <li><a href="#/T"><span>T</span></a></li>
-                            <li><a href="#/U"><span>U</span></a></li>
-                            <li><a href="#/V"><span>V</span></a></li>
-                            <li><a href="#/W"><span>W</span></a></li>
-                            <li><a href="#/X"><span>X</span></a></li>
-                            <li><a href="#/Y"><span>Y</span></a></li>
-                            <li><a href="#/Z"><span>Z</span></a></li>
-                        </ul>
-                    </div>
-
-                    <div role="main">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <span><img src="resources/graphics/placeholder.gif" alt="#" data-src=".archive/testimage.png" /></span>
-                                    <div>
-                                        <p>Title of Media Folder. Additional Text to test length</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span><img src=".archive/testimage.png" alt="#" /></span>
-                                    <div>
-                                        <p>Title of Media Folder. Additional Text to test length</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span><img src=".archive/testimage.png" alt="#" /></span>
-                                    <div>
-                                        <p>Title of Media Folder. Additional Text to test length</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span><img src=".archive/testimage.png" alt="#" /></span>
-                                    <div>
-                                        <p>Title of Media Folder. Additional Text to test length</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span><img src=".archive/testimage.png" alt="#" /></span>
-                                    <div>
-                                        <p>Title of Media Folder. Additional Text to test length</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span><img src=".archive/testimage.png" alt="#" /></span>
-                                    <div>
-                                        <p>Title of Media Folder. Additional Text to test length</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span><img src=".archive/testimage.png" alt="#" /></span>
-                                    <div>
-                                        <p>Title of Media Folder. Additional Text to test length</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span><img src=".archive/testimage.png" alt="#" /></span>
-                                    <div>
-                                        <p>Title of Media Folder. Additional Text to test length</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span><img src=".archive/testimage.png" alt="#" /></span>
-                                    <div>
-                                        <p>Title of Media Folder. Additional Text to test length</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span><img src=".archive/testimage.png" alt="#" /></span>
-                                    <div>
-                                        <p>Title of Media Folder. Additional Text to test length</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span><img src=".archive/testimage.png" alt="#" /></span>
-                                    <div>
-                                        <p>Title of Media Folder. Additional Text to test length</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span><img src=".archive/testimage.png" alt="#" /></span>
-                                    <div>
-                                        <p>Title of Media Folder. Additional Text to test length</p>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
--->
-<!--
-                    <div>
-                        <footer>
-                            <a href="#" onclick="console.log('playlist');"><span>1&nbsp;of&nbsp;10</span><span>Playlist</span></a>
-                        </footer>
-                    </div>
-                </div>
--->
             </div>
 
         </div>
         <!-- End Application - - - - - - - - - - - - - - - - - - -->
-        <script src="resources/vendor/angular/angular.js"></script>
-        <script src="resources/vendor/angular/angular-route.js"></script>
-        <script>
-            (function(window, angular, undefined) {'use strict';<?php
-                    $doit = new Common();
-                    echo $doit->PackJS(
-                        'app/app.js',
-                        'app/controllers/media.js',
-                        'app/controllers/detail.js',
-                        'app/controllers/play.js',
-                        'app/controllers/playlist.js'
-                    );
-                ?>})(this, angular);
-        </script>
+
+        <?php
+            $doit = new IncludeFiles();
+            $doit->startWrapper = "<script>";
+            $doit->endWrapper = "</script>";
+            echo $doit->files('resources/vendor/angular/angular.min.js','resources/vendor/angular/angular-route.min.js');
+        ?>
+
+        <?php
+            $doit = new IncludeFiles();
+            $doit->startWrapper = "(function(window, angular, undefined) {'use strict';";
+            $doit->endWrapper = "})(this, angular);";
+
+            echo $doit->packJs(
+                'app/app.js',
+                'app/controllers/media.js',
+                'app/controllers/detail.js',
+                'app/controllers/play.js',
+                'app/controllers/playlist.js'
+            );
+        ?>
+
     </body>
 </html>
